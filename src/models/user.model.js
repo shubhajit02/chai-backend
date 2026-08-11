@@ -83,4 +83,5 @@ userSchema.methods.generateRefreshToken = function () {
     return jwt.sign(payload,process.env.REFRESH_TOKEN_SECRET,{expiresIn:process.env.REFRESH_TOKEN_EXPIRY})
 }
 
-export const User = model('User', userSchema);
+const User = model('User', userSchema);
+export {User}
