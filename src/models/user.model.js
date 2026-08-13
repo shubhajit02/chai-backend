@@ -53,15 +53,15 @@ const userSchema = new Schema({
 userSchema.pre('save', async function (next) {
     const salt = 10
 
-    if (!this.isModified("password")) return next()
+    if (!this.isModified("password")) return 
     //if there is no modification in this(userSchema) password field then return the next middleware function
 
     this.password = await bcrypt.hash(this.password, salt)
-    next()
+    
 })
 
 userSchema.methods.comparePassword = async function (password) {
-    await bcrypt.compare(password, this.password)
+   return await bcrypt.compare(password, this.password)
 }
 
 userSchema.methods.generateAccessToken = function () {
