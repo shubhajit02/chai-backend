@@ -8,7 +8,7 @@ const asyncHandler=(requestHandler)=>{
 export { asyncHandler }
 
 //2nd approach
-// const asyncHandler = (fn) => (req, res, next) => {
+// const asyncHandler =async (fn) => (req, res, next) => {
 //     try {
 //         await fn(req, res, next)
 

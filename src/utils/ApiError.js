@@ -3,9 +3,11 @@ class ApiError extends Error {
         statusCode,
         message = "Something went wrong",
         errors = [],
+        data,
         stack = ""
 
-    ) {super(message)
+    ) {super(message) 
+        //because I inherit the class of Error, I must call super() first inside contructor
         this.statusCode = statusCode
         this.data = null
         this.success=false

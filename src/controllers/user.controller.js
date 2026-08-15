@@ -223,10 +223,10 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
       ))
 
    } catch (error) {
-console.log("Error : Fail To Generate Access Token");
-throw new ApiError(401,error?.message || "Invalid refresh Token")
+      console.log("Error : Fail To Generate Access Token");
+      throw new ApiError(401, error?.message || "Invalid refresh Token")
 
    }
 })
 
-export { registerUser, loginUser, logoutUser,refreshAccessToken }
+export { registerUser, loginUser, logoutUser, refreshAccessToken }
